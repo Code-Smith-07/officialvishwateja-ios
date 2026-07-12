@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <title>Privacy Policy - Birthdays Reminder Pro</title>
+    <style>
+        :root {
+            --background-start: #f4f4f8;
+            --background-end: #e8f0fe;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --text-primary: #1d1d1f;
+            --text-secondary: #515154;
+            --text-accent: #007AFF;
+            --glass-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.12);
+            --shine-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-start: #000000;
+                --background-end: #1C1C1E;
+                --glass-bg: rgba(20, 20, 30, 0.4);
+                --glass-border: rgba(255, 255, 255, 0.15);
+                --text-primary: #f5f5f7;
+                --text-secondary: #aeaeb2;
+                --text-accent: #0A84FF;
+                --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+                --shine-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .policy-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px) saturate(180%) brightness(1.15);
+            -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(1.15);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px; /* Apple-inspired rounded corners */
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        /* Shine effect for the card */
+        .policy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--shine-gradient);
+            opacity: 0;
+            transition: left 0.6s ease, opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .policy-card:hover::before {
+            left: 100%;
+            opacity: 1;
+        }
+
+        .policy-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-align: center;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .last-updated {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 32px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        p, li {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 8px;
+        }
+
+        /* Custom list bullets */
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px; /* Adjusted for vertical alignment */
+            width: 16px;
+            height: 16px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2334C759'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd' /%3E%3C/svg%3E");
+            background-size: 16px 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        li.negative::before {
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23FF3B30'%3E%3Cpath fill-rule='evenodd' d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z' clip-rule='evenodd' /%3E%3C/svg%3E");
+        }
+
+        a {
+            color: var(--text-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .summary {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--glass-border);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .summary strong {
+            font-weight: 600;
+        }
+        
+        .support-button {
+            display: inline-block;
+            background: var(--text-accent);
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
+            margin: 24px 0;
+        }
+
+        .support-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+            opacity: 0.9;
+        }
+
+        .support-button:active {
+            transform: translateY(0);
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 32px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 10px;
+            }
+
+            .policy-card {
+                padding: 24px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 17px;
+            }
+            
+            p, li {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="policy-card">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated"><strong>Last Updated: October 29, 2025</strong></p>
+
+            <h2>Introduction</h2>
+            <p>Birthdays Reminder Pro ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how our iOS application handles your information.</p>
+
+            <h2>Information Collection and Use</h2>
+            <p><strong>We DO NOT collect, store, or transmit any personal information.</strong></p>
+            <p>Birthdays Reminder Pro is designed with privacy as a core principle:</p>
+            <ul>
+                <li>All birthday data is stored <strong>locally on your device only</strong></li>
+                <li>No data is transmitted to our servers</li>
+                <li>No analytics or tracking services are used</li>
+                <li>No user accounts or registration required</li>
+                <li>No third-party advertising networks</li>
+                <li>No cookies or tracking technologies</li>
+            </ul>
+
+            <h2>Data Storage</h2>
+            <p>Birthdays Reminder Pro stores the following data <strong>locally on your device</strong>:</p>
+            <ul>
+                <li><strong>Birthday Information:</strong> Names and dates of birth you enter</li>
+                <li><strong>Profile Photos:</strong> Images you choose to upload or URLs you provide</li>
+                <li><strong>App Settings:</strong> Your preferences for theme (light/dark mode)</li>
+                <li><strong>Color Preferences:</strong> Theme colors you select for birthday cards</li>
+            </ul>
+            <p>This data is stored using your device's local storage and <strong>never leaves your device</strong>.</p>
+
+            <h2>Data You Provide</h2>
+            <h3>Optional Information:</h3>
+            <ul>
+                <li><strong>Names:</strong> Birthday person's name (stored locally)</li>
+                <li><strong>Dates:</strong> Birth dates (stored locally)</li>
+                <li><strong>Photos:</strong> Profile pictures from your photo library or image URLs (stored locally)</li>
+            </ul>
+            <h3>How We Use This Data:</h3>
+            <p>We don't use your data. It stays on your device to provide app functionality.</p>
+
+            <h2>Photo Library Access</h2>
+            <p>If you choose to add photos to birthdays, the app will request access to your Photo Library. This access is:</p>
+            <ul>
+                <li><strong>Optional:</strong> You can use the app without providing photos</li>
+                <li><strong>Local Only:</strong> Selected photos are stored on your device</li>
+                <li><strong>User-Controlled:</strong> You decide which photos to use</li>
+            </ul>
+            <p>The app never uploads photos to any server.</p>
+
+            <h2>Image URLs</h2>
+            <p>If you choose to add images via URL, the images are:</p>
+            <ul>
+                <li>Loaded directly from the URL you provide</li>
+                <li>Cached locally on your device</li>
+                <li>Not transmitted through our servers</li>
+                <li>Your responsibility regarding copyright and permissions</li>
+            </ul>
+
+            <h2>Internet Connection</h2>
+            <p>Birthdays Reminder Pro <strong>does not require an internet connection</strong> to function. The app works completely offline.</p>
+            <p>If you choose to add profile photos via URL, an internet connection will be needed to load those specific images.</p>
+
+            <h2>Data Sharing</h2>
+            <p><strong>We do not share any data because we do not collect any data.</strong></p>
+            <p>Your birthday information is:</p>
+            <ul>
+                <li class="negative">Never transmitted to our servers</li>
+                <li class="negative">Never shared with third parties</li>
+                <li class="negative">Never used for advertising</li>
+                <li class="negative">Never sold or rented</li>
+                <li class="negative">Never analyzed for any purpose</li>
+            </ul>
+
+            <h2>Children's Privacy</h2>
+            <p>Birthdays Reminder Pro is safe for users of all ages. We do not knowingly collect personal information from anyone, including children under 13.</p>
+            <p>Since all data stays on the device and is never transmitted, there are no privacy concerns for children using this app with parental guidance.</p>
+
+            <h2>Data Deletion</h2>
+            <p>To delete your data:</p>
+            <ol style="padding-left: 30px; color: var(--text-secondary);">
+                <li>Open the app</li>
+                <li>Delete individual birthdays using the edit/delete function, or</li>
+                <li>Delete the app from your device</li>
+            </ol>
+            <p style="margin-top: 12px;">Deleting the app will permanently remove all locally stored data.</p>
+
+            <h2>Third-Party Services</h2>
+            <p>Birthdays Reminder Pro does <strong>not</strong> use:</p>
+            <ul>
+                <li class="negative">Analytics services (Google Analytics, Firebase Analytics, etc.)</li>
+                <li class="negative">Advertising networks</li>
+                <li class="negative">Social media integrations</li>
+                <li class="negative">Cloud storage services</li>
+                <li class="negative">Push notification services (in current version)</li>
+                <li class="negative">Any third-party SDKs that collect data</li>
+            </ul>
+
+            <h2>Data Security</h2>
+            <p>Your data security is ensured because:</p>
+            <ul>
+                <li>All data remains on your device</li>
+                <li>iOS device-level encryption protects your data</li>
+                <li>No network transmission means no interception risk</li>
+                <li>No server means no server breaches</li>
+            </ul>
+            <p>We recommend:</p>
+            <ul>
+                <li>Keep your device locked with a passcode</li>
+                <li>Keep iOS updated with latest security patches</li>
+                <li>Use device encryption (enabled by default on iOS)</li>
+            </ul>
+
+            <h2>Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+            <ul>
+                <li>Posting the new Privacy Policy on this page</li>
+                <li>Updating the "Last Updated" date</li>
+                <li>Announcing in app update notes (if significant changes)</li>
+            </ul>
+
+            <h2>Your Rights</h2>
+            <p>Since we don't collect or store your data on our servers, standard data rights (access, correction, deletion) are managed by you directly through the app or by deleting the app from your device.</p>
+            <h3>Your Control:</h3>
+            <ul>
+                <li>Full control over all data entered</li>
+                <li>Ability to edit any information</li>
+                <li>Ability to delete any birthday</li>
+                <li>Ability to delete all data by removing the app</li>
+            </ul>
+
+            <h2>International Users</h2>
+            <p>Birthdays Reminder Pro does not transmit data internationally because it doesn't transmit data at all. The app works the same way regardless of your location.</p>
+
+            <h2>Compliance</h2>
+            <p>This privacy policy complies with:</p>
+            <ul>
+                <li>Apple App Store Guidelines</li>
+                <li>GDPR (General Data Protection Regulation)</li>
+                <li>CCPA (California Consumer Privacy Act)</li>
+                <li>COPPA (Children's Online Privacy Protection Act)</li>
+            </ul>
+            <p>Since we don't collect data, most privacy regulations don't apply, but we've designed the app to meet the highest privacy standards anyway.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or Birthdays Reminder Pro's privacy practices:</p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a><br>
+                <strong>Website:</strong> <a href="https://officialvishwateja-ios.web.app/birthdays-reminder-pro" target="_blank">https://officialvishwateja-ios.web.app/birthdays-reminder-pro</a>
+            </p>
+            <p>We'll respond to your inquiry within 48 hours.</p>
+
+            <h2>Consent</h2>
+            <p>By using Birthdays Reminder Pro, you consent to this Privacy Policy.</p>
+
+            <hr style="border: 0; height: 1px; background: var(--glass-border); margin: 32px 0;">
+
+            <p class="summary">
+                <strong>Summary:</strong> Birthdays Reminder Pro is a privacy-first app. We don't collect, store, or share your data because all your information stays on your device. Simple as that.
+            </p>
+
+            <div class="button-container">
+                <a href="support/" class="support-button">Contact Support</a>
+            </div>
+
+            <p class="footer">
+                © 2024 Official Vishwateja. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
+

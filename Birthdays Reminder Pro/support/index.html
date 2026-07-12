@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <title>Support - Birthdays Reminder Pro</title>
+    <style>
+        :root {
+            --background-start: #f4f4f8;
+            --background-end: #e8f0fe;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --text-primary: #1d1d1f;
+            --text-secondary: #515154;
+            --text-accent: #007AFF;
+            --glass-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.12);
+            --shine-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-start: #000000;
+                --background-end: #1C1C1E;
+                --glass-bg: rgba(20, 20, 30, 0.4);
+                --glass-border: rgba(255, 255, 255, 0.15);
+                --text-primary: #f5f5f7;
+                --text-secondary: #aeaeb2;
+                --text-accent: #0A84FF;
+                --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+                --shine-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .support-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px) saturate(180%) brightness(1.15);
+            -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(1.15);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .support-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--shine-gradient);
+            opacity: 0;
+            transition: left 0.6s ease, opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .support-card:hover::before {
+            left: 100%;
+            opacity: 1;
+        }
+
+        .support-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-align: center;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 32px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        p, li {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .contact-box {
+            background: rgba(0, 122, 255, 0.1);
+            border: 1px solid var(--text-accent);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+
+        .contact-box strong {
+            color: var(--text-primary);
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+        }
+
+        a {
+            color: var(--text-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        .back-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 16px;
+            }
+
+            .support-card {
+                padding: 24px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="support-card">
+            <a href="../privacy-policy.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Back to Privacy Policy
+            </a>
+
+            <h1>Support</h1>
+            <p class="subtitle">Birthdays Reminder Pro</p>
+
+            <h2>Get Help</h2>
+            <p>We're here to help! If you have any questions, issues, or feedback about Birthdays Reminder Pro, please don't hesitate to reach out.</p>
+
+            <div class="contact-box">
+                <p><strong>Email Support:</strong></p>
+                <p><a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a></p>
+                <p style="margin-top: 16px;"><strong>Response Time:</strong></p>
+                <p>We typically respond within 48 hours during business days.</p>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>How do I add a birthday?</h3>
+                <p>Open the app, tap the "+" button, enter the person's name and birthday date, and save. The app will automatically remind you before their special day.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is my data secure?</h3>
+                <p>Absolutely. All your birthday data is stored locally on your device. We never collect, access, or share your personal information. Check our <a href="../">Privacy Policy</a> for more details.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I sync birthdays across devices?</h3>
+                <p>Currently, the app stores data locally on your device. Cloud sync features may be added in future updates.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I delete a birthday?</h3>
+                <p>Swipe left on any birthday entry in your list and tap the delete button.</p>
+            </div>
+
+            <h2>Feature Requests</h2>
+            <p>Have an idea to make Birthdays Reminder Pro even better? We'd love to hear it! Send your suggestions to <a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a>.</p>
+
+            <h2>Report a Bug</h2>
+            <p>Found a bug? Please email us with:</p>
+            <ul>
+                <li>A description of the issue</li>
+                <li>Steps to reproduce the problem</li>
+                <li>Your device model and iOS version</li>
+                <li>Screenshots (if applicable)</li>
+            </ul>
+            <p>Send bug reports to: <a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a></p>
+
+            <p class="footer">
+                © 2024 Official Vishwateja. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

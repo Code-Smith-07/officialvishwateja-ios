@@ -1,0 +1,8 @@
+.DS_Store
+**/.DS_Store
+.firebase/
+*.log
+.idea/
+.vscode/
+*.swp
+*~
