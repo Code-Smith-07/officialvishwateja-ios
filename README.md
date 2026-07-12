@@ -147,7 +147,7 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 - **Developer:** Vishwateja S B  
 - **GitHub:** [@Code-Smith-07](https://github.com/Code-Smith-07)  
-- **Email:** officialvishwateja@gmail.com  
+- **Email:** officialvishwateja@proton.me  
 
 ---
 
