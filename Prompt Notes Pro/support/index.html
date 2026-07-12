@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <title>Support - Prompt Notes Pro</title>
+    <style>
+        :root {
+            --background-start: #f4f4f8;
+            --background-end: #e8f0fe;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --text-primary: #1d1d1f;
+            --text-secondary: #515154;
+            --text-accent: #007AFF;
+            --glass-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.12);
+            --shine-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-start: #000000;
+                --background-end: #1C1C1E;
+                --glass-bg: rgba(20, 20, 30, 0.4);
+                --glass-border: rgba(255, 255, 255, 0.15);
+                --text-primary: #f5f5f7;
+                --text-secondary: #aeaeb2;
+                --text-accent: #0A84FF;
+                --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+                --shine-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .support-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px) saturate(180%) brightness(1.15);
+            -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(1.15);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .support-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--shine-gradient);
+            opacity: 0;
+            transition: left 0.6s ease, opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .support-card:hover::before {
+            left: 100%;
+            opacity: 1;
+        }
+
+        .support-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 16px;
+            color: var(--text-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .back-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .app-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .app-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .platform-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(0, 122, 255, 0.12);
+            color: var(--text-accent);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-align: center;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 32px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        p, li {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 8px;
+        }
+
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2334C759'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd' /%3E%3C/svg%3E");
+            background-size: 16px 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .contact-box {
+            background: rgba(0, 122, 255, 0.1);
+            border: 1px solid rgba(0, 122, 255, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+
+        .contact-box strong {
+            color: var(--text-primary);
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+        }
+
+        a {
+            color: var(--text-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 16px;
+            }
+
+            .support-card {
+                padding: 24px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="support-card">
+
+            <a href="../privacy-policy.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Back to Privacy Policy
+            </a>
+
+            <div class="app-header">
+                <div class="app-icon">
+                    <img src="../icon.png" alt="Prompt Notes Pro Icon">
+                </div>
+                <div class="platform-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+                    </svg>
+                    macOS App
+                </div>
+                <h1>Support</h1>
+                <p class="subtitle">Prompt Notes Pro</p>
+            </div>
+
+            <h2>Get Help</h2>
+            <p>We're here to help! If you have any questions, issues, or feedback about Prompt Notes Pro, please don't hesitate to reach out.</p>
+
+            <div class="contact-box">
+                <p><strong>Email Support:</strong></p>
+                <p><a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a></p>
+                <p style="margin-top: 16px;"><strong>Response Time:</strong></p>
+                <p>We typically respond within 48 hours during business days.</p>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>How do I add a new prompt?</h3>
+                <p>Click the "+" or "Add" button in the app, enter a title and your prompt content, assign a category tag if needed, and save. Your prompt will appear in the grid immediately.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I copy a prompt quickly?</h3>
+                <p>Click the copy icon on any prompt card, or click the card to open it and use the copy button. The content is instantly copied to your clipboard.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I search for a prompt?</h3>
+                <p>Use the search bar at the top of the app. Type any word from the title or content and the grid filters in real time.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I delete a prompt?</h3>
+                <p>Open the prompt card, click the edit/delete button, and confirm deletion. This action cannot be undone.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is my data synced to the cloud?</h3>
+                <p>No — all your prompts and snippets are stored locally on your Mac. Nothing is synced or transmitted to any server. Cloud sync may be added in a future update.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is my data secure?</h3>
+                <p>Yes. All data is stored locally on your Mac inside the macOS App Sandbox. We never collect, access, or share your information. See our <a href="../privacy-policy.html">Privacy Policy</a> for full details.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What macOS version is required?</h3>
+                <p>Prompt Notes Pro requires macOS 12.0 (Monterey) or later. It is optimised for Apple Silicon (M-series) Macs.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I back up my prompts?</h3>
+                <p>Your prompts are stored in your Mac's Application Support folder and are included in Time Machine backups automatically if Time Machine is enabled.</p>
+            </div>
+
+            <h2>Feature Requests</h2>
+            <p>Have an idea to make Prompt Notes Pro even better? We'd love to hear it! Send your suggestions to <a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a>.</p>
+
+            <h2>Report a Bug</h2>
+            <p>Found a bug? Please email us with:</p>
+            <ul>
+                <li>A description of the issue</li>
+                <li>Steps to reproduce the problem</li>
+                <li>Your Mac model and macOS version</li>
+                <li>Screenshots or screen recordings (if applicable)</li>
+            </ul>
+            <p>Send bug reports to: <a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a></p>
+
+            <p class="footer">
+                © 2026 Official Vishwateja. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
