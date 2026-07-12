@@ -16,6 +16,7 @@ Static hosting site for **App Store / Mac App Store** privacy policies, support 
 | `favicon.svg` | Site favicon |
 | `firebase.json` | Firebase Hosting config (`public: "."`) |
 | `.firebaserc` | Default Firebase project: `officialvishwateja-ios` |
+| `Chat Blues/` | Privacy policy, support page, app icon |
 | `Birthdays Reminder Pro/` | Privacy policy, support page, app icon |
 | `Prompt Notes Pro/` | Privacy policy, support page, app icon |
 
@@ -25,13 +26,21 @@ This is **not** the full native app source code. It is the **legal + support web
 
 ## Apps covered
 
-### 1. Birthdays Reminder Pro
+### 1. Chat Blues
+- **Type:** iOS AI chat / productivity (BYOK + on-device models)  
+- **Bundle ID:** `com.officialvishwateja.chatblues`  
+- **Tagline:** Free AI chat with your own keys or private on-device models  
+- **Product site:** [chatblues.com](https://chatblues.com/)  
+- **Privacy:** [`Chat Blues/privacy-policy.html`](./Chat%20Blues/privacy-policy.html)  
+- **Support:** [`Chat Blues/support/index.html`](./Chat%20Blues/support/index.html)
+
+### 2. Birthdays Reminder Pro
 - **Type:** iOS productivity / reminders  
 - **Tagline:** Never miss a birthday again — timely reminders for important dates  
 - **Privacy:** [`Birthdays Reminder Pro/privacy-policy.html`](./Birthdays%20Reminder%20Pro/privacy-policy.html)  
 - **Support:** [`Birthdays Reminder Pro/support/index.html`](./Birthdays%20Reminder%20Pro/support/index.html)
 
-### 2. Prompt Notes Pro
+### 3. Prompt Notes Pro
 - **Type:** macOS utility (AI prompts & code snippets)  
 - **Tagline:** Manage AI prompts and code snippets in one native macOS app  
 - **Privacy:** [`Prompt Notes Pro/privacy-policy.html`](./Prompt%20Notes%20Pro/privacy-policy.html)  
@@ -48,14 +57,19 @@ officialvishwateja-ios/
 ├── favicon.svg
 ├── firebase.json              # Firebase Hosting
 ├── .firebaserc
+├── Chat Blues/
+│   ├── privacy-policy.html
+│   ├── icon.png
+│   └── support/
+│       └── index.html
 ├── Birthdays Reminder Pro/
 │   ├── privacy-policy.html
-│   ├── IMG_0802-Photoroom.png # App icon asset
+│   ├── IMG_0802-Photoroom.png
 │   └── support/
 │       └── index.html
 └── Prompt Notes Pro/
     ├── privacy-policy.html
-    ├── icon.png               # App icon asset
+    ├── icon.png
     └── support/
         └── index.html
 ```
@@ -93,12 +107,14 @@ Hosting serves the repo root (see `firebase.json`). Paths with spaces (app folde
 
 Point each app’s metadata to the hosted URLs, for example:
 
-| Field | Example path |
-|-------|----------------|
-| Privacy Policy URL | `https://<your-hosting-domain>/Prompt%20Notes%20Pro/privacy-policy.html` |
-| Support URL | `https://<your-hosting-domain>/Prompt%20Notes%20Pro/support/index.html` |
+| App | Privacy Policy URL (path) | Support URL (path) |
+|-----|---------------------------|--------------------|
+| **Chat Blues** | `/Chat%20Blues/privacy-policy.html` | `/Chat%20Blues/support/index.html` |
+| Birthdays Reminder Pro | `/Birthdays%20Reminder%20Pro/privacy-policy.html` | `/Birthdays%20Reminder%20Pro/support/index.html` |
+| Prompt Notes Pro | `/Prompt%20Notes%20Pro/privacy-policy.html` | `/Prompt%20Notes%20Pro/support/index.html` |
 
-Same pattern for Birthdays Reminder Pro under its folder.
+Prefix with your Firebase Hosting domain, e.g.  
+`https://officialvishwateja-ios.web.app/Chat%20Blues/privacy-policy.html`
 
 ---
 
@@ -136,6 +152,11 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.1.0 — Chat Blues legal pages
+- Added **Chat Blues** privacy policy, support site, and app icon  
+- Landing page lists Chat Blues under iOS Apps  
+- README App Store Connect URL table updated  
 
 ### 1.0.0 — Initial public upload
 - Landing page for Official Vishwateja apps  
