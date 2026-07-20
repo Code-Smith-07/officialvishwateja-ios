@@ -17,6 +17,7 @@ Static hosting site for **App Store / Mac App Store** privacy policies, support 
 | `firebase.json` | Firebase Hosting config (`public: "."`) |
 | `.firebaserc` | Default Firebase project: `officialvishwateja-ios` |
 | `Chat Blues/` | Privacy policy, support page, app icon |
+| `Control Pro/` | Privacy policy, support page, app icon |
 | `Birthdays Reminder Pro/` | Privacy policy, support page, app icon |
 | `Prompt Notes Pro/` | Privacy policy, support page, app icon |
 
@@ -34,13 +35,21 @@ This is **not** the full native app source code. It is the **legal + support web
 - **Privacy:** [`Chat Blues/privacy-policy.html`](./Chat%20Blues/privacy-policy.html)  
 - **Support:** [`Chat Blues/support/index.html`](./Chat%20Blues/support/index.html)
 
-### 2. Birthdays Reminder Pro
+### 2. Control Pro – Desktop Remote
+- **Type:** iOS remote control / screen mirroring (local network, TLS, zero data collection)  
+- **Bundle ID:** `com.controlpro.ioscontroller`  
+- **Tagline:** Wireless trackpad, keyboard, and live screen mirror for your computer  
+- **Source repo:** [Control-Pro](https://github.com/Code-Smith-07/Control-Pro)  
+- **Privacy:** [`Control Pro/privacy-policy.html`](./Control%20Pro/privacy-policy.html)  
+- **Support:** [`Control Pro/support/index.html`](./Control%20Pro/support/index.html)
+
+### 3. Birthdays Reminder Pro
 - **Type:** iOS productivity / reminders  
 - **Tagline:** Never miss a birthday again — timely reminders for important dates  
 - **Privacy:** [`Birthdays Reminder Pro/privacy-policy.html`](./Birthdays%20Reminder%20Pro/privacy-policy.html)  
 - **Support:** [`Birthdays Reminder Pro/support/index.html`](./Birthdays%20Reminder%20Pro/support/index.html)
 
-### 3. Prompt Notes Pro
+### 4. Prompt Notes Pro
 - **Type:** macOS utility (AI prompts & code snippets)  
 - **Tagline:** Manage AI prompts and code snippets in one native macOS app  
 - **Privacy:** [`Prompt Notes Pro/privacy-policy.html`](./Prompt%20Notes%20Pro/privacy-policy.html)  
@@ -58,6 +67,11 @@ officialvishwateja-ios/
 ├── firebase.json              # Firebase Hosting
 ├── .firebaserc
 ├── Chat Blues/
+│   ├── privacy-policy.html
+│   ├── icon.png
+│   └── support/
+│       └── index.html
+├── Control Pro/
 │   ├── privacy-policy.html
 │   ├── icon.png
 │   └── support/
@@ -110,6 +124,7 @@ Point each app’s metadata to the hosted URLs, for example:
 | App | Privacy Policy URL (path) | Support URL (path) |
 |-----|---------------------------|--------------------|
 | **Chat Blues** | `/Chat%20Blues/privacy-policy.html` | `/Chat%20Blues/support/index.html` |
+| **Control Pro – Desktop Remote** | `/Control%20Pro/privacy-policy.html` | `/Control%20Pro/support/index.html` |
 | Birthdays Reminder Pro | `/Birthdays%20Reminder%20Pro/privacy-policy.html` | `/Birthdays%20Reminder%20Pro/support/index.html` |
 | Prompt Notes Pro | `/Prompt%20Notes%20Pro/privacy-policy.html` | `/Prompt%20Notes%20Pro/support/index.html` |
 
@@ -152,6 +167,11 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.2.0 — Control Pro legal pages
+- Added **Control Pro – Desktop Remote** privacy policy, support site, and app icon  
+- Landing page lists Control Pro under iOS Apps  
+- README App Store Connect URL table updated  
 
 ### 1.1.0 — Chat Blues legal pages
 - Added **Chat Blues** privacy policy, support site, and app icon  
