@@ -39,6 +39,7 @@ This is **not** the full native app source code. It is the **legal + support web
 - **Type:** iOS remote control / screen mirroring (local network, TLS, zero data collection)  
 - **Bundle ID:** `com.controlpro.ioscontroller`  
 - **Tagline:** Wireless trackpad, keyboard, and live screen mirror for your computer  
+- **Companion:** **Control Pro Host** (macOS, notarized direct download) — listed under macOS Apps on the landing page; shares this privacy policy and support page  
 - **Source repo:** [Control-Pro](https://github.com/Code-Smith-07/Control-Pro)  
 - **Privacy:** [`Control Pro/privacy-policy.html`](./Control%20Pro/privacy-policy.html)  
 - **Support:** [`Control Pro/support/index.html`](./Control%20Pro/support/index.html)
@@ -74,6 +75,7 @@ officialvishwateja-ios/
 ├── Control Pro/
 │   ├── privacy-policy.html
 │   ├── icon.png
+│   ├── host-icon.png
 │   └── support/
 │       └── index.html
 ├── Birthdays Reminder Pro/
@@ -170,7 +172,7 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 ### 1.2.0 — Control Pro legal pages
 - Added **Control Pro – Desktop Remote** privacy policy, support site, and app icon  
-- Landing page lists Control Pro under iOS Apps  
+- Landing page lists Control Pro under iOS Apps and **Control Pro Host** under macOS Apps  
 - README App Store Connect URL table updated  
 
 ### 1.1.0 — Chat Blues legal pages
