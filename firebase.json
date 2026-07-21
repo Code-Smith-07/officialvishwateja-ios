@@ -6,6 +6,28 @@
       ".DS_Store",
       ".firebaserc"
     ],
-    "rewrites": []
+    "rewrites": [],
+    "redirects": [
+      {
+        "source": "/control-pro/support",
+        "destination": "/Control Pro/support/",
+        "type": 301
+      },
+      {
+        "source": "/control-pro/host-support",
+        "destination": "/Control Pro/host-support/",
+        "type": 301
+      },
+      {
+        "source": "/control-pro/privacy",
+        "destination": "/Control Pro/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/control-pro/host-privacy",
+        "destination": "/Control Pro/host-privacy-policy.html",
+        "type": 301
+      }
+    ]
   }
 }
