@@ -27,6 +27,26 @@
         "source": "/control-pro/host-privacy",
         "destination": "/Control Pro/host-privacy-policy.html",
         "type": 301
+      },
+      {
+        "source": "/control-pro/download",
+        "destination": "/Control Pro/downloads/Control-Pro.dmg",
+        "type": 302
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.dmg",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-apple-diskimage"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"Control-Pro.dmg\""
+          }
+        ]
       }
     ]
   }

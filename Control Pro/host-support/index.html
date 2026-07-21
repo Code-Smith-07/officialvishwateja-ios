@@ -169,6 +169,28 @@
         }
         .contact-box p { margin-bottom: 8px; }
         .contact-box strong { color: var(--text-primary); }
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--text-accent);
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
+            margin: 4px 0 10px;
+        }
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+            opacity: 0.95;
+        }
+        .download-button svg { width: 18px; height: 18px; }
+        .download-note { font-size: 14px; color: var(--text-secondary); }
         .faq-item { margin-bottom: 24px; }
         .faq-item h3 { margin-top: 0; }
         code {
@@ -232,6 +254,12 @@
                 <p style="margin-top: 16px;"><strong>Response Time:</strong></p>
                 <p>Within 2 business days.</p>
             </div>
+
+            <h2>Download</h2>
+            <p>Control Pro Host is distributed directly from this site rather than the Mac App Store, because controlling your Mac requires the Accessibility permission, which App Store apps are not permitted to use.</p>
+            <a href="/control-pro/download" class="download-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v8.586l2.293-2.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V4a1 1 0 011-1zM4 16a1 1 0 100 2h12a1 1 0 100-2H4z" clip-rule="evenodd" /></svg> Download for macOS</a>
+            <p class="download-note">Universal disk image · requires macOS 15 or newer · signed and notarized by Apple.</p>
+            <p class="download-note">Open the downloaded image and drag Control Pro into your Applications folder.</p>
 
             <h2>Getting Started</h2>
             <ul>
