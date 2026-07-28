@@ -17,6 +17,7 @@ Static hosting site for **App Store / Mac App Store** privacy policies, support 
 | `firebase.json` | Firebase Hosting config (`public: "."`) |
 | `.firebaserc` | Default Firebase project: `officialvishwateja-ios` |
 | `Chat Blues/` | Privacy policy, support page, app icon |
+| `Daily Diary Notes/` | Privacy policy, support page, app icon |
 | `Control Pro/` | Privacy policy, support page, app icon |
 | `Birthdays Reminder Pro/` | Privacy policy, support page, app icon |
 | `Prompt Notes Pro/` | Privacy policy, support page, app icon |
@@ -44,13 +45,20 @@ This is **not** the full native app source code. It is the **legal + support web
 - **Privacy:** [`Control Pro/privacy-policy.html`](./Control%20Pro/privacy-policy.html)  
 - **Support:** [`Control Pro/support/index.html`](./Control%20Pro/support/index.html)
 
-### 3. Birthdays Reminder Pro
+### 3. Daily Diary Notes
+- **Type:** iOS diary / journal (fully offline, zero data collection)  
+- **Bundle ID:** `com.officialvishwateja.dailydiarynotes`  
+- **Tagline:** A diary that feels like paper — fourteen bindings, real page turns, nothing leaves your device  
+- **Privacy:** [`Daily Diary Notes/privacy-policy.html`](./Daily%20Diary%20Notes/privacy-policy.html)  
+- **Support:** [`Daily Diary Notes/support/index.html`](./Daily%20Diary%20Notes/support/index.html)
+
+### 4. Birthdays Reminder Pro
 - **Type:** iOS productivity / reminders  
 - **Tagline:** Never miss a birthday again — timely reminders for important dates  
 - **Privacy:** [`Birthdays Reminder Pro/privacy-policy.html`](./Birthdays%20Reminder%20Pro/privacy-policy.html)  
 - **Support:** [`Birthdays Reminder Pro/support/index.html`](./Birthdays%20Reminder%20Pro/support/index.html)
 
-### 4. Prompt Notes Pro
+### 5. Prompt Notes Pro
 - **Type:** macOS utility (AI prompts & code snippets)  
 - **Tagline:** Manage AI prompts and code snippets in one native macOS app  
 - **Privacy:** [`Prompt Notes Pro/privacy-policy.html`](./Prompt%20Notes%20Pro/privacy-policy.html)  
@@ -68,6 +76,11 @@ officialvishwateja-ios/
 ├── firebase.json              # Firebase Hosting
 ├── .firebaserc
 ├── Chat Blues/
+│   ├── privacy-policy.html
+│   ├── icon.png
+│   └── support/
+│       └── index.html
+├── Daily Diary Notes/
 │   ├── privacy-policy.html
 │   ├── icon.png
 │   └── support/
@@ -127,11 +140,25 @@ Point each app’s metadata to the hosted URLs, for example:
 |-----|---------------------------|--------------------|
 | **Chat Blues** | `/Chat%20Blues/privacy-policy.html` | `/Chat%20Blues/support/index.html` |
 | **Control Pro – Desktop Remote** | `/Control%20Pro/privacy-policy.html` | `/Control%20Pro/support/index.html` |
+| **Daily Diary Notes** | `/Daily%20Diary%20Notes/privacy-policy.html` | `/Daily%20Diary%20Notes/support/index.html` |
 | Birthdays Reminder Pro | `/Birthdays%20Reminder%20Pro/privacy-policy.html` | `/Birthdays%20Reminder%20Pro/support/index.html` |
 | Prompt Notes Pro | `/Prompt%20Notes%20Pro/privacy-policy.html` | `/Prompt%20Notes%20Pro/support/index.html` |
 
 Prefix with your Firebase Hosting domain, e.g.  
 `https://officialvishwateja-ios.web.app/Chat%20Blues/privacy-policy.html`
+
+Some apps also have short redirects configured in `firebase.json`, which are
+easier to type and survive a folder rename:
+
+| Short path | Goes to |
+|------------|---------|
+| `/daily-diary-notes/privacy` | `/Daily Diary Notes/privacy-policy.html` |
+| `/daily-diary-notes/support` | `/Daily Diary Notes/support/` |
+| `/control-pro/privacy` | `/Control Pro/privacy-policy.html` |
+| `/control-pro/support` | `/Control Pro/support/` |
+| `/control-pro/host-privacy` | `/Control Pro/host-privacy-policy.html` |
+| `/control-pro/host-support` | `/Control Pro/host-support/` |
+| `/control-pro/download` | `https://officialvishwateja-mac.web.app` |
 
 ---
 
@@ -169,6 +196,12 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.3.0 — Daily Diary Notes legal pages
+- Added **Daily Diary Notes** privacy policy, support site, and app icon  
+- Landing page lists Daily Diary Notes under iOS Apps  
+- Short redirects added: `/daily-diary-notes/privacy` and `/daily-diary-notes/support`  
+- README App Store Connect URL table updated, and the existing short URLs documented  
 
 ### 1.2.0 — Control Pro legal pages
 - Added **Control Pro – Desktop Remote** privacy policy, support site, and app icon  

@@ -32,6 +32,16 @@
         "source": "/control-pro/download",
         "destination": "https://officialvishwateja-mac.web.app",
         "type": 301
+      },
+      {
+        "source": "/daily-diary-notes/privacy",
+        "destination": "/Daily Diary Notes/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/daily-diary-notes/support",
+        "destination": "/Daily Diary Notes/support/",
+        "type": 301
       }
     ]
   }
