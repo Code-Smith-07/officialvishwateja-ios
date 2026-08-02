@@ -197,6 +197,10 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 ## Changelog
 
+### 1.3.2 — Consistent app directory cards
+- Kept every app card at the same full page-wide baseline height instead of shrinking cards with shorter descriptions
+- Aligned each privacy-policy action consistently along the bottom of its card
+
 ### 1.3.1 — Daily Diary Notes launch refresh
 - Replaced the website artwork with the exact 1024px icon shipped by the app
 - Updated the landing-page description for the current iPhone and iPad feature set
