@@ -197,6 +197,12 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 ## Changelog
 
+### 1.3.1 — Daily Diary Notes launch refresh
+- Replaced the website artwork with the exact 1024px icon shipped by the app
+- Updated the landing-page description for the current iPhone and iPad feature set
+- Expanded support for automatic page creation, autosave, iPad spreads, and alternate app icons
+- Clarified the unused microphone declaration in the privacy policy
+
 ### 1.3.0 — Daily Diary Notes legal pages
 - Added **Daily Diary Notes** privacy policy, support site, and app icon  
 - Landing page lists Daily Diary Notes under iOS Apps  
