@@ -241,7 +241,7 @@
                     iOS App
                 </div>
                 <h1>Privacy Policy</h1>
-                <p class="last-updated">Last updated: July 2026 · Developer: Vishwateja S B (Official Vishwateja)</p>
+                <p class="last-updated">Last updated: August 5, 2026 · Developer: Vishwateja S B (Official Vishwateja)</p>
             </div>
 
             <h2>1. Summary</h2>
@@ -267,9 +267,34 @@
                 <li>Message content, attachments (images, PDFs), and recent conversation context are sent <strong>directly from your device</strong> to the third-party AI provider you configured in Settings (bring-your-own-key). Chat Blues does not proxy these requests through our servers.</li>
                 <li>Each provider you choose has its own privacy policy and retention rules. Review that provider’s policy before sending personal or sensitive content.</li>
                 <li>When you use on-device AI (downloaded models on your device), no message content leaves your phone.</li>
+                <li><strong>Your documents:</strong> documents you add stay on your device and are never uploaded to us. When &ldquo;Use documents in chats&rdquo; is on, short relevant excerpts are included in the message sent to the provider you chose, so it can answer using them. When it is off, your documents are never used.</li>
             </ul>
 
-            <h3>2.4 Diagnostics</h3>
+            <h3>2.4 When you run code in Live Preview</h3>
+            <p>Live Preview can execute code the AI writes. Where it runs decides whether anything leaves your device:</p>
+            <ul>
+                <li><strong>Stays on your device.</strong> HTML, CSS, JavaScript and React run in a sandboxed frame inside the app.
+                C and C++ are compiled and run by a compiler bundled inside the app, so they work with no internet connection.
+                Python also runs on your device; the Python interpreter is downloaded once from a public CDN, but
+                <em>your code is never uploaded</em> &mdash; only the interpreter comes down.</li>
+                <li><strong>Leaves your device, only if you ask.</strong> Rust and Java cannot be compiled inside the app.
+                If you press <em>Run</em> on a Rust or Java block, the app asks you to confirm and names the service, and only
+                then sends that one block of code to <a href="https://godbolt.org/">Compiler Explorer</a> (godbolt.org) to be
+                compiled and executed, returning the output. Nothing is sent before you confirm, and this never happens automatically.</li>
+                <li>Only the code in that block is sent. Your conversation, other chats, account details and API keys are not included.</li>
+                <li>Compiler Explorer is an independent service with its own policy
+                (<a href="https://godbolt.org/#privacy">godbolt.org/#privacy</a>). By their published summary they store submitted
+                source temporarily, anonymise IP addresses, delete web and infrastructure logs after 32 days, and keep
+                <em>hashed</em> (non-reversible) source in compilation analytics for up to a year. If your Rust or Java code is
+                confidential, do not press Run on it.</li>
+            </ul>
+
+            <h3>2.5 Downloads the app makes</h3>
+            <p>Some features fetch files rather than send them. On-device AI models are downloaded from Hugging Face when you
+            choose to install one, and the Python interpreter is downloaded from a public CDN the first time you run Python.
+            These are downloads &mdash; no message content, document or API key is transmitted as part of them.</p>
+
+            <h3>2.6 Diagnostics</h3>
             <p>If crash reporting is enabled in a future release, crashes are reported without user content. We will update this policy before turning any such feature on.</p>
 
             <h2>3. Required reason APIs (iOS)</h2>
@@ -292,7 +317,7 @@
 
             <h2>5. Storage and retention</h2>
             <ul>
-                <li><strong>API keys:</strong> iOS Keychain with protection <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>. Not synced to other devices by us.</li>
+                <li><strong>API keys:</strong> stored in the iOS Keychain with protection <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>. If you sign in, your keys are encrypted on your device (AES-GCM, with a key derived from your account ID that never leaves the device) and the ciphertext is synced to Firestore so they are available on your other devices. If you never sign in, keys stay on this device only.</li>
                 <li><strong>Chat history (signed-in):</strong> Firestore, scoped to your user ID.</li>
                 <li><strong>Attachments (signed-in):</strong> Firebase Storage under your user path when needed to stay within database limits.</li>
                 <li><strong>Local model files:</strong> Application Support on device. Not backed up to iCloud.</li>
@@ -310,7 +335,7 @@
             <ul>
                 <li>Delete any chat or all chats from the app.</li>
                 <li>Sign out to stop cloud sync without deleting your account.</li>
-                <li>Request account and cloud data deletion by emailing <a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a>. We purge Firestore and related Storage records within 30 days.</li>
+                <li><strong>Delete your account and all associated data from inside the app:</strong> open <em>Settings &rarr; Account &rarr; Delete account</em>. This permanently removes your synced chats and messages, your settings, your stored API keys and your uploaded attachments from our servers, and then deletes the sign-in account itself. You can also request deletion by emailing <a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a>.</li>
             </ul>
 
             <h2>8. Children</h2>
