@@ -42,6 +42,16 @@
         "source": "/daily-diary-notes/support",
         "destination": "/Daily Diary Notes/support/",
         "type": 301
+      },
+      {
+        "source": "/chat-blues/privacy",
+        "destination": "/Chat Blues/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/chat-blues/support",
+        "destination": "/Chat Blues/support/",
+        "type": 301
       }
     ]
   }

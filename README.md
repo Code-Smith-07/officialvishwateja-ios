@@ -159,6 +159,8 @@ easier to type and survive a folder rename:
 | `/control-pro/host-privacy` | `/Control Pro/host-privacy-policy.html` |
 | `/control-pro/host-support` | `/Control Pro/host-support/` |
 | `/control-pro/download` | `https://officialvishwateja-mac.web.app` |
+| `/chat-blues/privacy` | `/Chat Blues/privacy-policy.html` |
+| `/chat-blues/support` | `/Chat Blues/support/` |
 
 ---
 
@@ -196,6 +198,10 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.3.4 — Chat Blues short redirects
+- Added `/chat-blues/privacy` and `/chat-blues/support`, bringing Chat Blues in line with Control Pro and Daily Diary Notes
+- Chat Blues was the only app whose App Store URLs were raw `%20`-encoded folder paths, which break silently if the folder is ever renamed
 
 ### 1.3.3 — Chat Blues privacy corrections
 - Disclosed that Live Preview's agent mode sends the **current file** to the AI provider you chose with every edit request — §2.4 described where code *runs* but not what leaves the device to get it *changed*
