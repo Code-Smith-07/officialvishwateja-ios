@@ -59,9 +59,17 @@ app's short-redirect convention below. Do not add a `/privacy` suffix or
 otherwise make it match the others; that would break the live link Apple has
 on file, exactly as happened before.
 
-A new app (no App Store Connect record yet, e.g. CodeQuest at the time of
-writing) has no submitted URL to preserve — pick whatever it should be, then
-never change it again once it's been entered into App Store Connect.
+A new app (no App Store Connect record yet) has no submitted URL to preserve.
+Pick whatever it should be, then never change it again once it's been entered
+into App Store Connect.
+
+**CodeQuest now has an App Store Connect record** (Apple ID `6816425215`, store
+name **Code Quest Pro**, entered 26 September 2026). The URLs pasted into it are
+the short aliases `https://officialvishwateja-ios.web.app/codequest/privacy` and
+`https://officialvishwateja-ios.web.app/codequest/support`. Those two redirects in
+`firebase.json`, and the `CodeQuest/` folder they point to, are now permanent.
+The same two URLs are also linked from inside the app (Settings > About), so
+renaming them would break the app too, not just the listing.
 
 ---
 
@@ -82,6 +90,7 @@ any redirect, folder, or filename change.
 | Daily Diary Notes | https://officialvishwateja-ios.web.app/daily-diary-notes/privacy | https://officialvishwateja-ios.web.app/daily-diary-notes/support |
 | Birthdays Reminder Pro | https://officialvishwateja-ios.web.app/birthdays-reminder-pro | https://officialvishwateja-ios.web.app/birthdays-reminder-pro/support |
 | Prompt Notes Pro (Mac) | https://officialvishwateja-ios.web.app/Prompt%20Notes%20Pro/privacy-policy.html | https://officialvishwateja-ios.web.app/Prompt%20Notes%20Pro/support/ |
+| Code Quest Pro (CodeQuest) | https://officialvishwateja-ios.web.app/codequest/privacy | https://officialvishwateja-ios.web.app/codequest/support |
 
 ### Not yet on the App Store — repo pages exist and are live, but no Apple record to preserve yet
 
@@ -89,7 +98,6 @@ any redirect, folder, or filename change.
 |-----|---------------------|--------------|
 | Chat Blues | https://officialvishwateja-ios.web.app/Chat%20Blues/privacy-policy.html | https://officialvishwateja-ios.web.app/Chat%20Blues/support/index.html |
 | Control Pro Host (macOS, direct-download only — never submitted to any App Store, see deploy-rules.md §5.6) | https://officialvishwateja-ios.web.app/Control%20Pro/host-privacy-policy.html | https://officialvishwateja-ios.web.app/Control%20Pro/host-support/index.html |
-| CodeQuest | https://officialvishwateja-ios.web.app/CodeQuest/privacy-policy.html (alias: `/codequest/privacy`) | https://officialvishwateja-ios.web.app/CodeQuest/support/ (alias: `/codequest/support`) |
 
 Once any "not yet submitted" app is entered into App Store Connect, whichever
 URL you actually paste into its Privacy Policy URL / Support URL fields
@@ -136,9 +144,11 @@ table and never rename that path again.
 - **Privacy:** [`Prompt Notes Pro/privacy-policy.html`](./Prompt%20Notes%20Pro/privacy-policy.html)  
 - **Support:** [`Prompt Notes Pro/support/index.html`](./Prompt%20Notes%20Pro/support/index.html)
 
-### 6. CodeQuest
+### 6. CodeQuest (App Store name: Code Quest Pro)
 - **Type:** iOS coding-lessons app (C, C++, Python, CS Foundations — fully offline, zero accounts)  
-- **Bundle ID:** `com.vishwateja.codequest`  
+- **Bundle ID:** `com.vishwateja.codequest` · **App Store Connect Apple ID:** `6816425215`  
+- **Names:** App Store listing **Code Quest Pro** ("CodeQuest" and "Code Quest" were already taken by other developers); home-screen name **Code Quest**. The pages here still say "CodeQuest", which is fine: it's the project name.  
+- **Submitted URLs:** `/codequest/privacy` and `/codequest/support` (permanent, see the warning at the top)  
 - **Tagline:** Learn C, C++, Python and CS Foundations with runnable lessons, quizzes and boss battles  
 - **Source repo:** [CodeQuest](https://github.com/Code-Smith-07/CodeQuest)  
 - **Privacy:** [`CodeQuest/privacy-policy.html`](./CodeQuest/privacy-policy.html)  
@@ -228,6 +238,7 @@ Point each app’s metadata to the hosted URLs, for example:
 | **Daily Diary Notes** | `/Daily%20Diary%20Notes/privacy-policy.html` | `/Daily%20Diary%20Notes/support/index.html` |
 | Birthdays Reminder Pro | `/Birthdays%20Reminder%20Pro/privacy-policy.html` | `/Birthdays%20Reminder%20Pro/support/index.html` |
 | Prompt Notes Pro | `/Prompt%20Notes%20Pro/privacy-policy.html` | `/Prompt%20Notes%20Pro/support/index.html` |
+| **Code Quest Pro** (CodeQuest) | `/codequest/privacy` (short alias, as submitted) | `/codequest/support` (short alias, as submitted) |
 
 Prefix with your Firebase Hosting domain, e.g.  
 `https://officialvishwateja-ios.web.app/Chat%20Blues/privacy-policy.html`
@@ -259,6 +270,9 @@ easier to type and survive a folder rename:
 - Apple-style glass cards, SF Pro / system font stack
 - Safe-area padding for notched devices
 - Static HTML/CSS only — no analytics SDKs, no trackers
+- **Copy style for new or edited text:** no long dashes (em or en). App Review reads these pages, and the
+  developer wants them to read as plainly written. Use a period, comma, colon or parentheses instead.
+  The CodeQuest pages and its home-page card follow this; older apps' pages haven't been rewritten yet.
 
 ---
 
@@ -287,6 +301,16 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.3.7 — CodeQuest entered in App Store Connect; policy and support corrections
+- CodeQuest has an App Store Connect record (Apple ID `6816425215`, listed as **Code Quest Pro**). Its row moved to
+  the "Confirmed submitted" table; `/codequest/privacy` and `/codequest/support` are now permanent.
+- Privacy policy: the iOS app no longer has a CDN fallback engine, so that paragraph now says the app never downloads
+  code of its own, and that web pages a learner writes and previews load whatever they link to. Explains the only case
+  iOS may ask about the camera or microphone (a learner-built page that uses them).
+- Support page: the FAQ wrongly said progress couldn't be reset in the app; it points to Settings > Progress > Reset
+  progress now. Minimum iOS is 15. Online extras packages are "several MB". Mentions Settings > About.
+- Plain punctuation (no long dashes) on both CodeQuest pages and its landing-page card.
 
 ### 1.3.6 — CodeQuest legal pages
 - Added **CodeQuest** privacy policy, support site, and app icon
