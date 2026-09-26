@@ -263,10 +263,10 @@
             <h2>4. Network access</h2>
             <p>CodeQuest runs fully offline by default: the C/C++ and Python compilers, the lessons and the curriculum are all bundled with the app.</p>
             <p>The only optional exception is <strong>Settings → Online extras → Python packages</strong>, off by default. If you turn it on, and a Python program you run imports a package the app doesn't ship (like <code>numpy</code> or <code>pandas</code>), the app downloads that package once over HTTPS from the Pyodide project's public package server (<code>cdn.jsdelivr.net</code>) and keeps a copy on your device. That request carries only what any web request carries, such as your IP address, which is inherent to how the internet works — no lesson content, code or progress is included or ever sent anywhere.</p>
-            <p>As a last-resort fallback, if the bundled offline C/C++ compiler cannot start at all on a given device, the app loads one public script file (a lightweight C++ interpreter) from a GitHub-hosted CDN so C/C++ lessons still run. This is a one-time file fetch, not a data upload.</p>
+            <p>The app never downloads code or engines of its own: everything it runs is inside the app you installed. Web pages that <em>you</em> write and preview in the Code tab can load whatever they link to (scripts, images, other sites), exactly as they would in a browser. That traffic is your own code talking to the sites you chose, and CodeQuest adds nothing to it.</p>
 
             <h2>5. Permissions we request</h2>
-            <p>CodeQuest does not request access to your camera, microphone, contacts, photos or location. It uses:</p>
+            <p>CodeQuest itself never requests access to your camera, microphone, contacts, photos or location. The only case where iOS may ask about the camera or microphone is if a web page you write and preview in the Code tab uses them (for example a file input&rsquo;s &ldquo;Take Photo&rdquo; option), just as a browser would. iOS asks you first, and CodeQuest never records, keeps or sends anything. It uses:</p>
             <ul>
                 <li><strong>Haptics</strong> — local vibration feedback when you tap things in the app. No data is read or sent.</li>
                 <li><strong>Device information</strong> (model, OS version, free storage) — read locally to power the in-app Device Care panel, which shows you your own device's storage and helps warn about heavy programs. This never leaves your device.</li>
