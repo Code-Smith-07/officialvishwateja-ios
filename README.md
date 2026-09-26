@@ -21,6 +21,7 @@ Static hosting site for **App Store / Mac App Store** privacy policies, support 
 | `Control Pro/` | Privacy policy, support page, app icon |
 | `Birthdays Reminder Pro/` | Privacy policy, support page, app icon |
 | `Prompt Notes Pro/` | Privacy policy, support page, app icon |
+| `CodeQuest/` | Privacy policy, support page, app icon |
 
 This is **not** the full native app source code. It is the **legal + support web surface** required by Apple App Store Connect (Privacy Policy URL, Support URL).
 
@@ -64,6 +65,14 @@ This is **not** the full native app source code. It is the **legal + support web
 - **Privacy:** [`Prompt Notes Pro/privacy-policy.html`](./Prompt%20Notes%20Pro/privacy-policy.html)  
 - **Support:** [`Prompt Notes Pro/support/index.html`](./Prompt%20Notes%20Pro/support/index.html)
 
+### 6. CodeQuest
+- **Type:** iOS coding-lessons app (C, C++, Python, CS Foundations — fully offline, zero accounts)  
+- **Bundle ID:** `com.vishwateja.codequest`  
+- **Tagline:** Learn C, C++, Python and CS Foundations with runnable lessons, quizzes and boss battles  
+- **Source repo:** [CodeQuest](https://github.com/Code-Smith-07/CodeQuest)  
+- **Privacy:** [`CodeQuest/privacy-policy.html`](./CodeQuest/privacy-policy.html)  
+- **Support:** [`CodeQuest/support/index.html`](./CodeQuest/support/index.html)
+
 ---
 
 ## Folder structure
@@ -96,7 +105,12 @@ officialvishwateja-ios/
 │   ├── IMG_0802-Photoroom.png
 │   └── support/
 │       └── index.html
-└── Prompt Notes Pro/
+├── Prompt Notes Pro/
+│   ├── privacy-policy.html
+│   ├── icon.png
+│   └── support/
+│       └── index.html
+└── CodeQuest/
     ├── privacy-policy.html
     ├── icon.png
     └── support/

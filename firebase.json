@@ -52,6 +52,16 @@
         "source": "/chat-blues/support",
         "destination": "/Chat Blues/support/",
         "type": 301
+      },
+      {
+        "source": "/codequest/privacy",
+        "destination": "/CodeQuest/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/codequest/support",
+        "destination": "/CodeQuest/support/",
+        "type": 301
       }
     ]
   }
