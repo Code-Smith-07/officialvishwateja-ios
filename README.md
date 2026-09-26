@@ -27,6 +27,44 @@ This is **not** the full native app source code. It is the **legal + support web
 
 ---
 
+## ⚠️ URLs already submitted to Apple — never rename, never assume consistency
+
+Once a Privacy Policy URL or Support URL is saved in an app's App Store Connect
+record, **that exact URL is what Apple checks against on the live app**, not
+whatever this repo's file layout "should" look like. Apple periodically
+re-checks these URLs; if one 404s, the app can be flagged and hidden pending a
+fix — this already happened once to Birthdays Reminder Pro (see the 1.3.5
+changelog entry) because its folder has no matching redirect.
+
+**Do not "clean up" or rename any path in this repo — including a folder name,
+an `.html` filename, or a `firebase.json` redirect `source` — without first
+confirming, per app, what URL is actually on file in App Store Connect.** The
+fastest way to check, without needing App Store Connect access, is to read it
+straight off the public App Store listing:
+
+```bash
+curl -s -A "Mozilla/5.0" "https://apps.apple.com/us/app/<app-slug>/id<appId>" \
+  | grep -oE 'https://officialvishwateja[a-z-]*\.web\.app[^"'"'"'\\ ]*'
+```
+
+That prints the literal Privacy Policy / Support hrefs Apple has for that app.
+Every app's *actual* App Store record is the source of truth — not this
+README, not the folder structure, and not what a "consistent" naming scheme
+would suggest.
+
+**Birthdays Reminder Pro is a deliberate exception, not a bug to fix:** its
+submitted URLs are the bare `/birthdays-reminder-pro` and
+`/birthdays-reminder-pro/support` — no `/privacy` suffix, unlike every other
+app's short-redirect convention below. Do not add a `/privacy` suffix or
+otherwise make it match the others; that would break the live link Apple has
+on file, exactly as happened before.
+
+A new app (no App Store Connect record yet, e.g. CodeQuest at the time of
+writing) has no submitted URL to preserve — pick whatever it should be, then
+never change it again once it's been entered into App Store Connect.
+
+---
+
 ## Apps covered
 
 ### 1. Chat Blues
@@ -175,6 +213,10 @@ easier to type and survive a folder rename:
 | `/control-pro/download` | `https://officialvishwateja-mac.web.app` |
 | `/chat-blues/privacy` | `/Chat Blues/privacy-policy.html` |
 | `/chat-blues/support` | `/Chat Blues/support/` |
+| `/codequest/privacy` | `/CodeQuest/privacy-policy.html` |
+| `/codequest/support` | `/CodeQuest/support/` |
+| `/birthdays-reminder-pro` **(no `/privacy` — this exact bare path is what's submitted to Apple)** | `/Birthdays Reminder Pro/privacy-policy.html` |
+| `/birthdays-reminder-pro/support` | `/Birthdays Reminder Pro/support/` |
 
 ---
 
@@ -212,6 +254,17 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.3.6 — CodeQuest legal pages
+- Added **CodeQuest** privacy policy, support site, and app icon
+- Landing page lists CodeQuest under iOS Apps
+- Short redirects added: `/codequest/privacy` and `/codequest/support`
+- Not yet submitted to App Store Connect at time of writing — see the "URLs already submitted to Apple" warning above before ever renaming its folder or redirects once it is
+
+### 1.3.5 — Fixed broken Birthdays Reminder Pro links
+- `/birthdays-reminder-pro` and `/birthdays-reminder-pro/support` — the exact URLs on file in Birthdays Reminder Pro's App Store Connect record — had **no redirect at all** in `firebase.json` and were 404ing live, risking Apple hiding the app for a broken Privacy Policy URL
+- Found by reading the real submitted URLs directly off the public App Store listing (`curl` against `apps.apple.com`, see the warning section above) rather than assuming the newer `/app-name/privacy` convention applied
+- Added the missing redirects; added the "URLs already submitted to Apple" section to this README so this doesn't get "cleaned up" back into a 404
 
 ### 1.3.4 — Chat Blues short redirects
 - Added `/chat-blues/privacy` and `/chat-blues/support`, bringing Chat Blues in line with Control Pro and Daily Diary Notes
