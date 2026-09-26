@@ -65,6 +65,39 @@ never change it again once it's been entered into App Store Connect.
 
 ---
 
+## Current privacy & support links — verified live, 26 September 2026
+
+Every link below was re-checked two ways: read directly off the public App
+Store listing with the `curl` command from the warning above (for apps that
+are live on the App Store), and then hit with
+`curl -sL -o /dev/null -w "%{http_code}"` to confirm it actually resolves.
+All 16 returned **200**. Re-run both checks before trusting this table after
+any redirect, folder, or filename change.
+
+### Confirmed submitted to Apple (App Store Connect record exists)
+
+| App | Privacy Policy URL | Support URL |
+|-----|---------------------|--------------|
+| Control Pro – Desktop Remote | https://officialvishwateja-ios.web.app/Control%20Pro/privacy-policy.html | https://officialvishwateja-ios.web.app/Control%20Pro/support/index.html |
+| Daily Diary Notes | https://officialvishwateja-ios.web.app/daily-diary-notes/privacy | https://officialvishwateja-ios.web.app/daily-diary-notes/support |
+| Birthdays Reminder Pro | https://officialvishwateja-ios.web.app/birthdays-reminder-pro | https://officialvishwateja-ios.web.app/birthdays-reminder-pro/support |
+| Prompt Notes Pro (Mac) | https://officialvishwateja-ios.web.app/Prompt%20Notes%20Pro/privacy-policy.html | https://officialvishwateja-ios.web.app/Prompt%20Notes%20Pro/support/ |
+
+### Not yet on the App Store — repo pages exist and are live, but no Apple record to preserve yet
+
+| App | Privacy Policy URL | Support URL |
+|-----|---------------------|--------------|
+| Chat Blues | https://officialvishwateja-ios.web.app/Chat%20Blues/privacy-policy.html | https://officialvishwateja-ios.web.app/Chat%20Blues/support/index.html |
+| Control Pro Host (macOS, direct-download only — never submitted to any App Store, see deploy-rules.md §5.6) | https://officialvishwateja-ios.web.app/Control%20Pro/host-privacy-policy.html | https://officialvishwateja-ios.web.app/Control%20Pro/host-support/index.html |
+| CodeQuest | https://officialvishwateja-ios.web.app/CodeQuest/privacy-policy.html (alias: `/codequest/privacy`) | https://officialvishwateja-ios.web.app/CodeQuest/support/ (alias: `/codequest/support`) |
+
+Once any "not yet submitted" app is entered into App Store Connect, whichever
+URL you actually paste into its Privacy Policy URL / Support URL fields
+becomes permanent per the warning above — move its row up to the confirmed
+table and never rename that path again.
+
+---
+
 ## Apps covered
 
 ### 1. Chat Blues
