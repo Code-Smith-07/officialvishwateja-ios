@@ -329,7 +329,7 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 ### 1.3.3 — Chat Blues privacy corrections
 - Disclosed that Live Preview's agent mode sends the **current file** to the AI provider you chose with every edit request — §2.4 described where code *runs* but not what leaves the device to get it *changed*
-- Logging two earlier Chat Blues corrections that shipped without changelog entries: the privacy policy was matched to the app (`d616707`), and the support page's account-deletion, iOS-version and device claims were corrected (`ec940ce`)
+- Logging two earlier Chat Blues corrections that shipped without changelog entries: the privacy policy was matched to the app (`4e0526f`), and the support page's account-deletion, iOS-version and device claims were corrected (`084d7a9`)
 
 ### 1.3.2 — Consistent app directory cards
 - Kept every app card at the same full page-wide baseline height instead of shrinking cards with shorter descriptions
