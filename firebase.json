@@ -62,6 +62,16 @@
         "source": "/codequest/support",
         "destination": "/CodeQuest/support/",
         "type": 301
+      },
+      {
+        "source": "/birthdays-reminder-pro",
+        "destination": "/Birthdays Reminder Pro/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/birthdays-reminder-pro/support",
+        "destination": "/Birthdays Reminder Pro/support/",
+        "type": 301
       }
     ]
   }
