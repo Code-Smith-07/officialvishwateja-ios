@@ -302,6 +302,17 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 ## Changelog
 
+### 1.3.9 — Birthdays Reminder Pro pages on the current design
+- Privacy and support pages rebuilt on the same layout as the other apps: All Apps link above the privacy card,
+  Back to Privacy Policy on support, app icon, iOS App badge, and the app name in the header line.
+- New app icon (`Birthdays Reminder Pro/icon.png`, 400 x 400), used on both pages and the landing-page card. The old
+  `IMG_0802-Photoroom.png` is kept in place, unreferenced, so nothing that ever linked to it breaks.
+- Support page: its "Privacy Policy" link pointed at the bare folder, which has no page; it now opens
+  `privacy-policy.html`. Adds "Published by" and a closing Privacy section, like the other support pages.
+- Policy wording is word-for-word unchanged, so its Last updated date (October 29, 2025) stays. Folder names, file
+  names and the `/birthdays-reminder-pro` and `/birthdays-reminder-pro/support` redirects are untouched; all three
+  URLs on the App Store listing were checked on a preview channel before deploying.
+
 ### 1.3.8 — Daily Diary Notes 1.1 support refresh
 - Support page: version 1.1. Getting Started now covers New entry and Continue on a blank page, double-tap to
   edit written words, closing the keyboard (or pulling the page down on iPhone) to finish, and turning a page by
