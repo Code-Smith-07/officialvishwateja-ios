@@ -302,6 +302,15 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 ## Changelog
 
+### 1.3.8 — Daily Diary Notes 1.1 support refresh
+- Support page: version 1.1. Getting Started now covers New entry and Continue on a blank page, double-tap to
+  edit written words, closing the keyboard (or pulling the page down on iPhone) to finish, and turning a page by
+  swiping or tapping its outer edge.
+- New FAQ entries: why the keyboard closes when a page is full, how a long paste flows onto new pages with Undo
+  Paste, and why the Home Screen label reads "Daily Diary".
+- Plain punctuation (no long dashes) on both Daily Diary Notes pages. The privacy policy's meaning is unchanged;
+  1.1 still collects nothing.
+
 ### 1.3.7 — CodeQuest entered in App Store Connect; policy and support corrections
 - CodeQuest has an App Store Connect record (Apple ID `6816425215`, listed as **Code Quest Pro**). Its row moved to
   the "Confirmed submitted" table; `/codequest/privacy` and `/codequest/support` are now permanent.
