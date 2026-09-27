@@ -310,6 +310,7 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
   Paste, and why the Home Screen label reads "Daily Diary".
 - Plain punctuation (no long dashes) on both Daily Diary Notes pages. The privacy policy's meaning is unchanged;
   1.1 still collects nothing.
+- Privacy policy dated September 28, 2026 to go with the 1.1 update.
 
 ### 1.3.7 — CodeQuest entered in App Store Connect; policy and support corrections
 - CodeQuest has an App Store Connect record (Apple ID `6816425215`, listed as **Code Quest Pro**). Its row moved to
