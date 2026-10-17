@@ -314,7 +314,7 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 ### 1.4.0 — 3D Capture Pro privacy and support pages
 - New `3D Capture Pro/` folder: privacy policy (10 sections), support page (Get Help, Getting Started, FAQ, Report a
-  Bug), and `icon.png` (the app icon; replace with the final 1024 px icon before the first submission).
+  Bug), and `icon.png` (the final 1024 px app icon, 17 Oct 2026).
 - Short links `/3d-capture-pro/privacy` and `/3d-capture-pro/support` in `firebase.json`; card on the landing page.
 - No existing folder, file or redirect was touched.
 
