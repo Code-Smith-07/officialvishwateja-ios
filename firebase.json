@@ -82,6 +82,16 @@
         "source": "/3d-capture-pro/support",
         "destination": "/3D Capture Pro/support/",
         "type": 301
+      },
+      {
+        "source": "/3d-capture-pro-studio/privacy",
+        "destination": "/3D Capture Pro Studio/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/3d-capture-pro-studio/support",
+        "destination": "/3D Capture Pro Studio/support/",
+        "type": 301
       }
     ]
   }
