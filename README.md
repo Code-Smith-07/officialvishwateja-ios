@@ -21,6 +21,7 @@ Static hosting site for **App Store / Mac App Store** privacy policies, support 
 | `Control Pro/` | Privacy policy, support page, app icon |
 | `Birthdays Reminder Pro/` | Privacy policy, support page, app icon |
 | `Prompt Notes Pro/` | Privacy policy, support page, app icon |
+| `3D Capture Pro/` | Privacy policy, support page, app icon (iPhone app and its Mac companion) |
 | `CodeQuest/` | Privacy policy, support page, app icon |
 
 This is **not** the full native app source code. It is the **legal + support web surface** required by Apple App Store Connect (Privacy Policy URL, Support URL).
@@ -144,6 +145,14 @@ table and never rename that path again.
 - **Privacy:** [`Prompt Notes Pro/privacy-policy.html`](./Prompt%20Notes%20Pro/privacy-policy.html)  
 - **Support:** [`Prompt Notes Pro/support/index.html`](./Prompt%20Notes%20Pro/support/index.html)
 
+### 7. 3D Capture Pro (iPhone and iPad, with the Mac app 3D Capture Pro Studio)
+- **Type:** iOS photo to 3D model capture app; the Mac companion builds the model on the user's own Mac
+- **Bundle ID:** `com.officialvishwateja.3dcapturepro` (Mac companion: `com.officialvishwateja.3dcapturepro.studio`)
+- **URLs to use in App Store Connect:** `/3d-capture-pro/privacy` and `/3d-capture-pro/support` (short aliases in `firebase.json`; permanent once submitted)
+- **Privacy:** [`3D Capture Pro/privacy-policy.html`](./3D%20Capture%20Pro/privacy-policy.html)  
+- **Support:** [`3D Capture Pro/support/index.html`](./3D%20Capture%20Pro/support/index.html)
+- The Mac companion is downloaded from the Mac apps site (`officialvishwateja-mac.web.app/3d-capture-pro-studio`), signed and notarized.
+
 ### 6. CodeQuest (App Store name: Code Quest Pro)
 - **Type:** iOS coding-lessons app (C, C++, Python, CS Foundations — fully offline, zero accounts)  
 - **Bundle ID:** `com.vishwateja.codequest` · **App Store Connect Apple ID:** `6816425215`  
@@ -238,6 +247,7 @@ Point each app’s metadata to the hosted URLs, for example:
 | **Daily Diary Notes** | `/Daily%20Diary%20Notes/privacy-policy.html` | `/Daily%20Diary%20Notes/support/index.html` |
 | Birthdays Reminder Pro | `/Birthdays%20Reminder%20Pro/privacy-policy.html` | `/Birthdays%20Reminder%20Pro/support/index.html` |
 | Prompt Notes Pro | `/Prompt%20Notes%20Pro/privacy-policy.html` | `/Prompt%20Notes%20Pro/support/index.html` |
+| 3D Capture Pro | `/3d-capture-pro/privacy` (short alias) | `/3d-capture-pro/support` (short alias) |
 | **Code Quest Pro** (CodeQuest) | `/codequest/privacy` (short alias, as submitted) | `/codequest/support` (short alias, as submitted) |
 
 Prefix with your Firebase Hosting domain, e.g.  
@@ -301,6 +311,12 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.4.0 — 3D Capture Pro privacy and support pages
+- New `3D Capture Pro/` folder: privacy policy (10 sections), support page (Get Help, Getting Started, FAQ, Report a
+  Bug), and `icon.png` (the app icon; replace with the final 1024 px icon before the first submission).
+- Short links `/3d-capture-pro/privacy` and `/3d-capture-pro/support` in `firebase.json`; card on the landing page.
+- No existing folder, file or redirect was touched.
 
 ### 1.3.9 — Birthdays Reminder Pro pages on the current design
 - Privacy and support pages rebuilt on the same layout as the other apps: All Apps link above the privacy card,

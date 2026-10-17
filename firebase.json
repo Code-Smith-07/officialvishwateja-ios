@@ -72,6 +72,16 @@
         "source": "/birthdays-reminder-pro/support",
         "destination": "/Birthdays Reminder Pro/support/",
         "type": 301
+      },
+      {
+        "source": "/3d-capture-pro/privacy",
+        "destination": "/3D Capture Pro/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/3d-capture-pro/support",
+        "destination": "/3D Capture Pro/support/",
+        "type": 301
       }
     ]
   }
