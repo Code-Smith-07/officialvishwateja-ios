@@ -327,6 +327,11 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 ## Changelog
 
+### 1.5.1 (Fur Explorer: App Store version has no online features)
+- Privacy policy: the Mac App Store version makes no internet connections; lyrics and subtitles come only from the
+  user's own files. The LRCLIB and OpenSubtitles searches are described as direct download only. Dated 25 October 2026.
+- Support FAQ: how to add lyrics and subtitle files (beside the song or video, or with Add Lyrics File / Add Subtitle File).
+
 ### 1.5.0 (Fur Explorer privacy and support pages)
 - New `Fur Explorer/` folder (Mac app): privacy policy (10 sections), support page (Get Help, Getting Started, FAQ,
   Report a Bug, Privacy) and `icon.png` (the 1024 px app icon on a cream tile, 24 Oct 2026).
