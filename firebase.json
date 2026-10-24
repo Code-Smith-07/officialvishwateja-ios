@@ -92,6 +92,16 @@
         "source": "/3d-capture-pro-studio/support",
         "destination": "/3D Capture Pro Studio/support/",
         "type": 301
+      },
+      {
+        "source": "/fur-explorer/privacy",
+        "destination": "/Fur Explorer/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/fur-explorer/support",
+        "destination": "/Fur Explorer/support/",
+        "type": 301
       }
     ]
   }

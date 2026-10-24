@@ -23,6 +23,7 @@ Static hosting site for **App Store / Mac App Store** privacy policies, support 
 | `Prompt Notes Pro/` | Privacy policy, support page, app icon |
 | `3D Capture Pro/` | iPhone and iPad app: privacy policy, support page, app icon |
 | `3D Capture Pro Studio/` | Mac companion (direct download): privacy policy, support page, app icon |
+| `Fur Explorer/` | Mac app (Mac App Store edition in preparation, plus direct download): privacy policy, support page, app icon |
 | `CodeQuest/` | Privacy policy, support page, app icon |
 
 This is **not** the full native app source code. It is the **legal + support web surface** required by Apple App Store Connect (Privacy Policy URL, Support URL).
@@ -99,6 +100,7 @@ any redirect, folder, or filename change.
 | App | Privacy Policy URL | Support URL |
 |-----|---------------------|--------------|
 | Chat Blues | https://officialvishwateja-ios.web.app/Chat%20Blues/privacy-policy.html | https://officialvishwateja-ios.web.app/Chat%20Blues/support/index.html |
+| Fur Explorer (macOS) | https://officialvishwateja-ios.web.app/fur-explorer/privacy | https://officialvishwateja-ios.web.app/fur-explorer/support |
 | Control Pro Host (macOS, direct-download only — never submitted to any App Store, see deploy-rules.md §5.6) | https://officialvishwateja-ios.web.app/Control%20Pro/host-privacy-policy.html | https://officialvishwateja-ios.web.app/Control%20Pro/host-support/index.html |
 
 Once any "not yet submitted" app is entered into App Store Connect, whichever
@@ -153,6 +155,14 @@ table and never rename that path again.
 - **Privacy:** [`3D Capture Pro/privacy-policy.html`](./3D%20Capture%20Pro/privacy-policy.html)  
 - **Support:** [`3D Capture Pro/support/index.html`](./3D%20Capture%20Pro/support/index.html)
 - **3D Capture Pro Studio** (macOS, notarized direct download from `officialvishwateja-mac.web.app/3d-capture-pro-studio`, not on any App Store) has its own pages: [`3D Capture Pro Studio/privacy-policy.html`](./3D%20Capture%20Pro%20Studio/privacy-policy.html) and [`3D Capture Pro Studio/support/index.html`](./3D%20Capture%20Pro%20Studio/support/index.html), short links `/3d-capture-pro-studio/privacy` and `/3d-capture-pro-studio/support`. Landing page: the iPhone and iPad app is under iOS Apps, Studio under macOS Apps, like Control Pro and Control Pro Host.
+
+### 8. Fur Explorer (Mac)
+- **Type:** macOS file organiser for photos, videos, music and documents (local catalogue, no data collection; optional LRCLIB lyrics and OpenSubtitles search on request)
+- **Bundle ID:** `com.officialvishwateja.furexplorer`
+- **URLs to use in App Store Connect:** `/fur-explorer/privacy` and `/fur-explorer/support` (short aliases in `firebase.json`; permanent once submitted)
+- **Privacy:** [`Fur Explorer/privacy-policy.html`](./Fur%20Explorer/privacy-policy.html)
+- **Support:** [`Fur Explorer/support/index.html`](./Fur%20Explorer/support/index.html)
+- Listed under macOS Apps on the landing page.
 
 ### 6. CodeQuest (App Store name: Code Quest Pro)
 - **Type:** iOS coding-lessons app (C, C++, Python, CS Foundations — fully offline, zero accounts)  
@@ -250,6 +260,7 @@ Point each app’s metadata to the hosted URLs, for example:
 | Prompt Notes Pro | `/Prompt%20Notes%20Pro/privacy-policy.html` | `/Prompt%20Notes%20Pro/support/index.html` |
 | 3D Capture Pro (iPhone and iPad) | `/3d-capture-pro/privacy` (short alias) | `/3d-capture-pro/support` (short alias) |
 | 3D Capture Pro Studio (Mac, direct download) | `/3d-capture-pro-studio/privacy` (short alias) | `/3d-capture-pro-studio/support` (short alias) |
+| Fur Explorer (Mac) | `/fur-explorer/privacy` (short alias) | `/fur-explorer/support` (short alias) |
 | **Code Quest Pro** (CodeQuest) | `/codequest/privacy` (short alias, as submitted) | `/codequest/support` (short alias, as submitted) |
 
 Prefix with your Firebase Hosting domain, e.g.  
@@ -273,6 +284,8 @@ easier to type and survive a folder rename:
 | `/codequest/support` | `/CodeQuest/support/` |
 | `/birthdays-reminder-pro` **(no `/privacy` — this exact bare path is what's submitted to Apple)** | `/Birthdays Reminder Pro/privacy-policy.html` |
 | `/birthdays-reminder-pro/support` | `/Birthdays Reminder Pro/support/` |
+| `/fur-explorer/privacy` | `/Fur Explorer/privacy-policy.html` |
+| `/fur-explorer/support` | `/Fur Explorer/support/` |
 
 ---
 
@@ -313,6 +326,12 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.5.0 (Fur Explorer privacy and support pages)
+- New `Fur Explorer/` folder (Mac app): privacy policy (10 sections), support page (Get Help, Getting Started, FAQ,
+  Report a Bug, Privacy) and `icon.png` (the 1024 px app icon on a cream tile, 24 Oct 2026).
+- Short links `/fur-explorer/privacy` and `/fur-explorer/support` in `firebase.json`; card under macOS Apps.
+- No existing folder, file or redirect was touched.
 
 ### 1.4.1 — 3D Capture Pro in the right sections, Studio gets its own pages
 - The 3D Capture Pro card was in the macOS Apps section; it is now under iOS Apps (iPhone and iPad), badge "iOS App".
