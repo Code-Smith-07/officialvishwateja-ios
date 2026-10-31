@@ -327,6 +327,10 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 
 ## Changelog
 
+### 1.5.2 (Fur Explorer: Add Whole Mac)
+- Support page: Getting Started covers Add Whole Mac and says external drives are added separately.
+- Privacy policy: section 5 names Add Whole Mac and how to remove a location. Dated 31 October 2026.
+
 ### 1.5.1 (Fur Explorer: App Store version has no online features)
 - Privacy policy: the Mac App Store version makes no internet connections; lyrics and subtitles come only from the
   user's own files. The LRCLIB and OpenSubtitles searches are described as direct download only. Dated 25 October 2026.
