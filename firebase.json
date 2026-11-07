@@ -102,6 +102,16 @@
         "source": "/fur-explorer/support",
         "destination": "/Fur Explorer/support/",
         "type": 301
+      },
+      {
+        "source": "/p2p-radio/privacy",
+        "destination": "/P2P Radio/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/p2p-radio/support",
+        "destination": "/P2P Radio/support/",
+        "type": 301
       }
     ]
   }

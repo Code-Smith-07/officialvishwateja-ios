@@ -25,6 +25,7 @@ Static hosting site for **App Store / Mac App Store** privacy policies, support 
 | `3D Capture Pro Studio/` | Mac companion (direct download): privacy policy, support page, app icon |
 | `Fur Explorer/` | Mac app (Mac App Store edition in preparation, plus direct download): privacy policy, support page, app icon |
 | `CodeQuest/` | Privacy policy, support page, app icon |
+| `P2P Radio/` | iPhone and iPad push-to-talk app (also an Android version): privacy policy, support page, app icon |
 
 This is **not** the full native app source code. It is the **legal + support web surface** required by Apple App Store Connect (Privacy Policy URL, Support URL).
 
@@ -101,6 +102,7 @@ any redirect, folder, or filename change.
 |-----|---------------------|--------------|
 | Chat Blues | https://officialvishwateja-ios.web.app/Chat%20Blues/privacy-policy.html | https://officialvishwateja-ios.web.app/Chat%20Blues/support/index.html |
 | Fur Explorer (macOS) | https://officialvishwateja-ios.web.app/fur-explorer/privacy | https://officialvishwateja-ios.web.app/fur-explorer/support |
+| P2P Radio (iPhone and iPad) | https://officialvishwateja-ios.web.app/p2p-radio/privacy | https://officialvishwateja-ios.web.app/p2p-radio/support |
 | Control Pro Host (macOS, direct-download only — never submitted to any App Store, see deploy-rules.md §5.6) | https://officialvishwateja-ios.web.app/Control%20Pro/host-privacy-policy.html | https://officialvishwateja-ios.web.app/Control%20Pro/host-support/index.html |
 
 Once any "not yet submitted" app is entered into App Store Connect, whichever
@@ -163,6 +165,13 @@ table and never rename that path again.
 - **Privacy:** [`Fur Explorer/privacy-policy.html`](./Fur%20Explorer/privacy-policy.html)
 - **Support:** [`Fur Explorer/support/index.html`](./Fur%20Explorer/support/index.html)
 - Listed under macOS Apps on the landing page.
+
+### 9. P2P Radio (iPhone and iPad)
+- **Type:** iOS push-to-talk radio: encrypted peer-to-peer voice over the same Wi-Fi or the internet, no accounts, no server of ours (uses public STUN servers and the optional ntfy.sh relay for encrypted invites)
+- **Bundle ID:** `com.p2pradio.app` (kept as is) · **Source repo:** [Walkie-Talkie-Pro](https://github.com/Code-Smith-07/Walkie-Talkie-Pro)
+- **URLs to use in App Store Connect:** `/p2p-radio/privacy` and `/p2p-radio/support` (short aliases in `firebase.json`; permanent once submitted). The same URLs are linked inside the app (Settings > About).
+- **Privacy:** [`P2P Radio/privacy-policy.html`](./P2P%20Radio/privacy-policy.html)
+- **Support:** [`P2P Radio/support/index.html`](./P2P%20Radio/support/index.html)
 
 ### 6. CodeQuest (App Store name: Code Quest Pro)
 - **Type:** iOS coding-lessons app (C, C++, Python, CS Foundations — fully offline, zero accounts)  
@@ -262,6 +271,7 @@ Point each app’s metadata to the hosted URLs, for example:
 | 3D Capture Pro Studio (Mac, direct download) | `/3d-capture-pro-studio/privacy` (short alias) | `/3d-capture-pro-studio/support` (short alias) |
 | Fur Explorer (Mac) | `/fur-explorer/privacy` (short alias) | `/fur-explorer/support` (short alias) |
 | **Code Quest Pro** (CodeQuest) | `/codequest/privacy` (short alias, as submitted) | `/codequest/support` (short alias, as submitted) |
+| P2P Radio (iPhone and iPad) | `/p2p-radio/privacy` (short alias) | `/p2p-radio/support` (short alias) |
 
 Prefix with your Firebase Hosting domain, e.g.  
 `https://officialvishwateja-ios.web.app/Chat%20Blues/privacy-policy.html`
@@ -286,6 +296,8 @@ easier to type and survive a folder rename:
 | `/birthdays-reminder-pro/support` | `/Birthdays Reminder Pro/support/` |
 | `/fur-explorer/privacy` | `/Fur Explorer/privacy-policy.html` |
 | `/fur-explorer/support` | `/Fur Explorer/support/` |
+| `/p2p-radio/privacy` | `/P2P Radio/privacy-policy.html` |
+| `/p2p-radio/support` | `/P2P Radio/support/` |
 
 ---
 
@@ -326,6 +338,12 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.6.0 (P2P Radio privacy and support pages)
+- New `P2P Radio/` folder (iPhone and iPad push-to-talk app): privacy policy (10 sections, dated 7 November 2026), support page
+  (Get Help, Getting Started, FAQ, Report a Bug, Privacy) and `icon.png` (the 1024 px app icon).
+- Short links `/p2p-radio/privacy` and `/p2p-radio/support` in `firebase.json`; card under iOS Apps.
+- No existing folder, file or redirect was touched.
 
 ### 1.5.2 (Fur Explorer: Add Whole Mac)
 - Support page: Getting Started covers Add Whole Mac and says external drives are added separately.
