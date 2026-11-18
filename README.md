@@ -23,7 +23,7 @@ Static hosting site for **App Store / Mac App Store** privacy policies, support 
 | `Prompt Notes Pro/` | Privacy policy, support page, app icon |
 | `3D Capture Pro/` | iPhone and iPad app: privacy policy, support page, app icon |
 | `3D Capture Pro Studio/` | Mac companion (direct download): privacy policy, support page, app icon |
-| `Fur Explorer/` | Mac app (Mac App Store edition in preparation, plus direct download): privacy policy, support page, app icon |
+| `Fur Explorer/` | Mac app (live on the Mac App Store since 18 Nov 2026, plus direct download): privacy policy, support page, app icon |
 | `CodeQuest/` | Privacy policy, support page, app icon |
 | `P2P Radio/` | iPhone and iPad push-to-talk app (also an Android version): privacy policy, support page, app icon |
 
@@ -338,6 +338,11 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.6.1 (Fur Explorer: Mac App Store link)
+- Fur Explorer is live on the Mac App Store (18 November 2026). Its support page has a Get Fur Explorer section with a
+  download button, its privacy policy has a store link under the title, and its card on the landing page has a second
+  link, Mac App Store, next to View Privacy Policy. The card's privacy link still covers the whole card. No URL changed.
 
 ### 1.6.0 (P2P Radio privacy and support pages)
 - New `P2P Radio/` folder (iPhone and iPad push-to-talk app): privacy policy (10 sections, dated 7 November 2026), support page

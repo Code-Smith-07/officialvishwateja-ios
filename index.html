@@ -187,6 +187,40 @@
             height: 16px;
         }
 
+        /* A card with two links: the privacy link covers the whole card, the store link sits on top. */
+        .app-meta.two-links {
+            position: static;
+            flex-wrap: wrap;
+            column-gap: 18px;
+            row-gap: 6px;
+        }
+
+        .card-link,
+        .store-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .card-link::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            border-radius: 24px;
+        }
+
+        .store-link {
+            position: relative;
+            z-index: 3;
+        }
+
+        .store-link:hover {
+            opacity: 0.7;
+        }
+
         .section-header {
             margin-bottom: 24px;
             margin-top: 48px;
@@ -457,19 +491,27 @@
             </a>
 
             <!-- Fur Explorer -->
-            <a href="Fur Explorer/privacy-policy.html" class="app-card">
+            <div class="app-card">
                 <div class="app-icon" style="background: none;">
                     <img src="Fur Explorer/icon.png" alt="Fur Explorer Icon" style="width:100%;height:100%;object-fit:cover;border-radius:18px;">
                 </div>
                 <div class="app-name">Fur Explorer</div>
                 <div class="app-description">Organises the photos, videos, music and documents on your Mac and drives. Browse by category, search instantly and preview anything, including MKV videos. Your files stay where they are.</div>
-                <div class="app-meta">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-                    </svg>
-                    <span>View Privacy Policy</span>
+                <div class="app-meta two-links">
+                    <a href="Fur Explorer/privacy-policy.html" class="card-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg>
+                        <span>View Privacy Policy</span>
+                    </a>
+                    <a href="https://apps.apple.com/us/app/fur-explorer/id6829046329?mt=12" class="store-link" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v8.586l2.293-2.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V4a1 1 0 011-1zM4 16a1 1 0 100 2h12a1 1 0 100-2H4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Mac App Store</span>
+                    </a>
                 </div>
-            </a>
+            </div>
         </div>
 
         <div class="footer">
