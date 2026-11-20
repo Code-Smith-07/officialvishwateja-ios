@@ -115,12 +115,22 @@
       },
       {
         "source": "/notes-pro/privacy",
-        "destination": "/Notes Pro/privacy-policy.html",
+        "destination": "/Notes X/privacy-policy.html",
         "type": 301
       },
       {
         "source": "/notes-pro/support",
-        "destination": "/Notes Pro/support/",
+        "destination": "/Notes X/support/",
+        "type": 301
+      },
+      {
+        "source": "/notes-x/privacy",
+        "destination": "/Notes X/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/notes-x/support",
+        "destination": "/Notes X/support/",
         "type": 301
       }
     ]
