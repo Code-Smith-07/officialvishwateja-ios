@@ -112,6 +112,16 @@
         "source": "/p2p-radio/support",
         "destination": "/P2P Radio/support/",
         "type": 301
+      },
+      {
+        "source": "/notes-pro/privacy",
+        "destination": "/Notes Pro/privacy-policy.html",
+        "type": 301
+      },
+      {
+        "source": "/notes-pro/support",
+        "destination": "/Notes Pro/support/",
+        "type": 301
       }
     ]
   }

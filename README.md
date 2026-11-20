@@ -26,6 +26,7 @@ Static hosting site for **App Store / Mac App Store** privacy policies, support 
 | `Fur Explorer/` | Mac app (live on the Mac App Store since 18 Nov 2026, plus direct download): privacy policy, support page, app icon |
 | `CodeQuest/` | Privacy policy, support page, app icon |
 | `P2P Radio/` | iPhone and iPad push-to-talk app (also an Android version): privacy policy, support page, app icon |
+| `Notes Pro/` | iPhone and iPad handwriting notebook: privacy policy, support page, app icon |
 
 This is **not** the full native app source code. It is the **legal + support web surface** required by Apple App Store Connect (Privacy Policy URL, Support URL).
 
@@ -102,6 +103,7 @@ any redirect, folder, or filename change.
 |-----|---------------------|--------------|
 | Chat Blues | https://officialvishwateja-ios.web.app/Chat%20Blues/privacy-policy.html | https://officialvishwateja-ios.web.app/Chat%20Blues/support/index.html |
 | Fur Explorer (macOS) | https://officialvishwateja-ios.web.app/fur-explorer/privacy | https://officialvishwateja-ios.web.app/fur-explorer/support |
+| Notes Pro (iPhone and iPad) | https://officialvishwateja-ios.web.app/notes-pro/privacy | https://officialvishwateja-ios.web.app/notes-pro/support |
 | P2P Radio (iPhone and iPad) | https://officialvishwateja-ios.web.app/p2p-radio/privacy | https://officialvishwateja-ios.web.app/p2p-radio/support |
 | Control Pro Host (macOS, direct-download only — never submitted to any App Store, see deploy-rules.md §5.6) | https://officialvishwateja-ios.web.app/Control%20Pro/host-privacy-policy.html | https://officialvishwateja-ios.web.app/Control%20Pro/host-support/index.html |
 
@@ -172,6 +174,12 @@ table and never rename that path again.
 - **URLs to use in App Store Connect:** `/p2p-radio/privacy` and `/p2p-radio/support` (short aliases in `firebase.json`; permanent once submitted). The same URLs are linked inside the app (Settings > About).
 - **Privacy:** [`P2P Radio/privacy-policy.html`](./P2P%20Radio/privacy-policy.html)
 - **Support:** [`P2P Radio/support/index.html`](./P2P%20Radio/support/index.html)
+
+### 10. Notes Pro (iPhone and iPad)
+- Handwriting notebook: Apple Pencil, endless canvas, PDF markup, audio linked to ink, flashcards, Focus Timer, Study Helper (on-device Apple Intelligence), 3D drawing and AR. 43 languages.
+- **Privacy:** [`Notes Pro/privacy-policy.html`](./Notes%20Pro/privacy-policy.html)
+- **Support:** [`Notes Pro/support/index.html`](./Notes%20Pro/support/index.html)
+- Short links (linked from the app's paywall and Settings, About): `/notes-pro/privacy`, `/notes-pro/support`. Not yet in App Store Connect.
 
 ### 6. CodeQuest (App Store name: Code Quest Pro)
 - **Type:** iOS coding-lessons app (C, C++, Python, CS Foundations — fully offline, zero accounts)  
@@ -270,6 +278,7 @@ Point each app’s metadata to the hosted URLs, for example:
 | 3D Capture Pro (iPhone and iPad) | `/3d-capture-pro/privacy` (short alias) | `/3d-capture-pro/support` (short alias) |
 | 3D Capture Pro Studio (Mac, direct download) | `/3d-capture-pro-studio/privacy` (short alias) | `/3d-capture-pro-studio/support` (short alias) |
 | Fur Explorer (Mac) | `/fur-explorer/privacy` (short alias) | `/fur-explorer/support` (short alias) |
+| Notes Pro (iPhone and iPad) | `/notes-pro/privacy` (short alias) | `/notes-pro/support` (short alias) |
 | **Code Quest Pro** (CodeQuest) | `/codequest/privacy` (short alias, as submitted) | `/codequest/support` (short alias, as submitted) |
 | P2P Radio (iPhone and iPad) | `/p2p-radio/privacy` (short alias) | `/p2p-radio/support` (short alias) |
 
@@ -296,6 +305,8 @@ easier to type and survive a folder rename:
 | `/birthdays-reminder-pro/support` | `/Birthdays Reminder Pro/support/` |
 | `/fur-explorer/privacy` | `/Fur Explorer/privacy-policy.html` |
 | `/fur-explorer/support` | `/Fur Explorer/support/` |
+| `/notes-pro/privacy` | `/Notes Pro/privacy-policy.html` |
+| `/notes-pro/support` | `/Notes Pro/support/` |
 | `/p2p-radio/privacy` | `/P2P Radio/privacy-policy.html` |
 | `/p2p-radio/support` | `/P2P Radio/support/` |
 
@@ -338,6 +349,11 @@ Privacy policy and support HTML are provided for App Store compliance. Reuse of 
 ---
 
 ## Changelog
+
+### 1.7.0 (Notes Pro privacy and support pages)
+- New `Notes Pro/` folder (iPhone and iPad handwriting notebook): privacy policy (10 sections, dated 20 November 2026), support
+  page, 1024 px app icon. Short redirects `/notes-pro/privacy` and `/notes-pro/support` in `firebase.json`, a card under
+  iOS Apps on the landing page, and rows in the URL tables. The app already links these two short URLs.
 
 ### 1.6.1 (Fur Explorer: Mac App Store link)
 - Fur Explorer is live on the Mac App Store (18 November 2026). Its support page has a Get Fur Explorer section with a

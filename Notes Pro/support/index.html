@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <title>Support - Notes Pro</title>
+    <style>
+        :root {
+            --background-start: #f4f4f8;
+            --background-end: #e8f0fe;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --text-primary: #1d1d1f;
+            --text-secondary: #515154;
+            --text-accent: #007AFF;
+            --glass-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.12);
+            --shine-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-start: #000000;
+                --background-end: #1C1C1E;
+                --glass-bg: rgba(20, 20, 30, 0.4);
+                --glass-border: rgba(255, 255, 255, 0.15);
+                --text-primary: #f5f5f7;
+                --text-secondary: #aeaeb2;
+                --text-accent: #0A84FF;
+                --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+                --shine-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
+
+        .support-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px) saturate(180%) brightness(1.15);
+            -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(1.15);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+        }
+        .support-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--shine-gradient);
+            opacity: 0;
+            transition: left 0.6s ease, opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .support-card:hover::before { left: 100%; opacity: 1; }
+        .support-card > * { position: relative; z-index: 2; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 16px;
+            color: var(--text-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link svg { width: 20px; height: 20px; }
+
+        .app-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .app-icon {
+            width: 72px; height: 72px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+        .platform-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(0, 122, 255, 0.12);
+            color: var(--text-accent);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-align: center;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 32px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        p, li { font-size: 16px; color: var(--text-secondary); margin-bottom: 12px; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { position: relative; padding-left: 30px; margin-bottom: 8px; }
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 4px;
+            width: 16px; height: 16px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2334C759'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd' /%3E%3C/svg%3E");
+            background-size: 16px 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .contact-box {
+            background: rgba(0, 122, 255, 0.1);
+            border: 1px solid rgba(0, 122, 255, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .contact-box p { margin-bottom: 8px; }
+        .contact-box strong { color: var(--text-primary); }
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--text-accent);
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
+            margin: 4px 0 10px;
+        }
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+            opacity: 0.95;
+        }
+        .download-button svg { width: 18px; height: 18px; }
+        .download-note { font-size: 14px; color: var(--text-secondary); }
+        .faq-item { margin-bottom: 24px; }
+        .faq-item h3 { margin-top: 0; }
+        code {
+            background: rgba(127, 127, 127, 0.15);
+            padding: 0.1em 0.4em;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        a {
+            color: var(--text-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        a:hover { opacity: 0.7; }
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        @media (max-width: 600px) {
+            .container { margin: 20px auto; padding: 16px; }
+            .support-card { padding: 24px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 20px; }
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="support-card">
+            <a href="../privacy-policy.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+                Back to Privacy Policy
+            </a>
+
+            <div class="app-header">
+                <div class="app-icon">
+                    <img src="../icon.png" alt="Notes Pro Icon">
+                </div>
+                <div class="platform-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 814 1000" fill="currentColor"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-37.8-155.5-127.4C46 790.7 0 663.5 0 541.4c0-194.3 125.4-297.5 248.5-297.5 66.1 0 121.2 43.4 162.7 43.4 39.5 0 101.1-46 176.3-46 28.5 0 130.9 2.6 198.3 99.2zm-234-181.5c31.1-36.9 53.1-88.1 53.1-139.3 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.5 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.5-71.3z"/></svg>
+                    iPhone and iPad App
+                </div>
+                <h1>Support</h1>
+                <p class="subtitle">Notes Pro · Version 1.0</p>
+            </div>
+
+            <h2>Get Help</h2>
+            <p>Questions, problems or ideas about Notes Pro? Write to us and we will help.</p>
+
+            <div class="contact-box">
+                <p><strong>Email Support:</strong></p>
+                <p><a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a></p>
+                <p style="margin-top: 16px;"><strong>Response Time:</strong></p>
+                <p>We typically respond within 48 hours.</p>
+                <p style="margin-top: 16px;"><strong>Published by:</strong></p>
+                <p>Official Vishwateja (Vishwateja S B)</p>
+            </div>
+
+            <h2>Getting Started</h2>
+            <ul>
+                <li><strong>Start a notebook:</strong> tap Start a Notebook and choose Pages, Canvas (endless) or 3D Space, then a cover and paper. You can also import a PDF to write on</li>
+                <li><strong>Write:</strong> your pens are Apple's own pen tray. Hold the pen still at the end of a line, circle, rectangle or triangle to snap it clean</li>
+                <li><strong>Select:</strong> the Smart Lasso in the pen tray picks ink, photos, stickers and tape to move, resize, rotate, recolour or turn into a flashcard</li>
+                <li><strong>Record:</strong> tap the waveform button, then Record. Later, tap any ink to hear what was said at that moment</li>
+                <li><strong>Study:</strong> cover answers with Recall Tape, make flashcards, start a Focus Timer, or open Study Helper for a summary and quiz cards (where Apple Intelligence is available)</li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>Where are my notebooks saved?</h3>
+                <p>On your device. Turn on iCloud Sync in Settings to keep them in your own iCloud and see them on your iPad and iPhone. If the same notebook changes on two devices at once, both versions are kept.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I keep my notes safe?</h3>
+                <p>Notes Pro saves as you write and keeps older versions (More, Version History). Settings, Back Up Now makes a backup file in Files, Notes Pro, Backups; save a copy to iCloud Drive too. Restore from Backup never overwrites a notebook you have.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Search does not find a word I wrote</h3>
+                <p>Handwriting is read on your device a few seconds after you write. Very messy writing may not be recognised. Try another spelling, or search for a nearby word.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I draw in 3D?</h3>
+                <p>Open a 3D Space notebook. The 3D Guide shows each move with a ghost finger and Pencil: swipe to spin, pick XY, XZ or YZ, draw, hold still to snap, double tap a line to move the plane there. Example draws a house line by line. You can open the guide again from the menu.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Why don't I see Study Helper?</h3>
+                <p>Study Helper uses Apple Intelligence on your device. It appears on iPhone and iPad models that support Apple Intelligence, with iOS or iPadOS 26 and Apple Intelligence turned on in Settings.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I change the language?</h3>
+                <p>Notes Pro follows your device language by default and comes in more than 40 languages. Choose another in Notes Pro, Settings, Language, or in the iOS Settings app, Notes Pro, Language.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I restore my purchase?</h3>
+                <p>Open Go Pro and tap Restore Purchases, signed in with the same Apple Account you bought with. Notes Pro Yearly can be managed or cancelled in the Settings app, your name, Subscriptions.</p>
+            </div>
+
+            <h2>Feature Requests</h2>
+            <p>Have an idea to make Notes Pro better? Send it to <a href="mailto:officialvishwateja@proton.me">officialvishwateja@proton.me</a>.</p>
+
+            <h2>Report a Bug</h2>
+            <p>Found a bug? Please email us with:</p>
+            <ul>
+                <li>What happened and what you expected</li>
+                <li>The steps to repeat it</li>
+                <li>Your iPhone or iPad model and iOS or iPadOS version</li>
+                <li>Whether you use an Apple Pencil, and screenshots if you can</li>
+            </ul>
+            <p><a href="mailto:officialvishwateja@proton.me?subject=Notes%20Pro%20bug%20report">Send a bug report</a></p>
+
+            <h2>Privacy</h2>
+            <p>Read the full <a href="../privacy-policy.html">Privacy Policy</a>.</p>
+
+            <p class="footer">© 2026 Official Vishwateja. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
